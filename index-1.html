@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هدية من القلب 💌</title>
+<meta name="theme-color" content="#140b20">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+*{box-sizing:border-box}
+:root{--bg:#09060d;--card:rgba(255,255,255,.075);--line:rgba(255,255,255,.13);--pink:#ff4f9a;--purple:#a66cff;--text:#fff;--muted:#c9bfd0}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 10%,#3b123d 0,transparent 32%),radial-gradient(circle at 85% 30%,#27104d 0,transparent 30%),linear-gradient(145deg,#08050b,#160b20 55%,#09060d);color:var(--text);font-family:Cairo,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:-50%;background:conic-gradient(from 0deg,transparent,rgba(255,79,154,.06),transparent,rgba(166,108,255,.06),transparent);animation:spin 20s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}} @keyframes float{50%{transform:translateY(-12px)}} @keyframes pulse{50%{transform:scale(1.08);opacity:.8}}
+.container{width:min(940px,92%);margin:auto;position:relative;z-index:2}
+.hero{min-height:100vh;display:grid;place-items:center;padding:36px 0}
+.card{background:var(--card);border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:30px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+.heroCard{padding:44px 30px;text-align:center;max-width:760px;margin:auto}
+.heart{font-size:70px;display:block;animation:float 3s ease-in-out infinite;filter:drop-shadow(0 0 25px rgba(255,79,154,.45))}
+h1{font-size:clamp(36px,7vw,68px);line-height:1.05;margin:12px 0 10px;font-weight:800}
+.gradient{background:linear-gradient(90deg,#fff,#ff8bc1,#b994ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{color:var(--muted);font-size:18px;line-height:1.9;max-width:620px;margin:0 auto 28px}
+.badge{display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1px solid var(--line);border-radius:999px;color:#ffd4e7;background:rgba(255,79,154,.08);font-size:13px}
+.section{padding:22px 0 55px}.sectionTitle{font-size:28px;margin:0 0 8px}.sectionSub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.heroCard{padding:34px 20px}}
+label{display:block;text-align:right;margin:0 0 7px;color:#eee;font-weight:700}
+input,textarea{width:100%;background:rgba(0,0,0,.25);border:1px solid var(--line);border-radius:16px;padding:14px 16px;color:#fff;font:inherit;outline:none;transition:.2s}
+textarea{min-height:130px;resize:vertical} input:focus,textarea:focus{border-color:rgba(255,79,154,.65);box-shadow:0 0 0 4px rgba(255,79,154,.08)}
+.field{margin-bottom:16px}
+button,.btn{border:0;border-radius:16px;padding:14px 20px;font:700 15px Cairo;cursor:pointer;color:#fff;background:linear-gradient(135deg,#ff4f9a,#8e5cff);box-shadow:0 10px 28px rgba(160,75,180,.25);transition:.18s}
+button:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btnGhost{background:rgba(255,255,255,.07);border:1px solid var(--line);box-shadow:none}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.song{padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:.2s}
+.song:hover{transform:translateY(-3px);border-color:rgba(255,79,154,.4)}
+.song.selected{border-color:#ff4f9a;box-shadow:0 0 0 2px rgba(255,79,154,.18),0 20px 45px rgba(255,79,154,.1)}
+.songIcon{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,79,154,.24),rgba(166,108,255,.2));font-size:23px;margin-bottom:12px}
+.song h3{margin:0 0 4px}.song p{margin:0;color:var(--muted);font-size:13px}
+.song a{display:inline-block;margin-top:10px;color:#ffb8d6;text-decoration:none;font-size:13px}
+.revealWrap{margin-top:25px;padding:28px;text-align:center;display:none}
+.envelope{font-size:72px;animation:pulse 1.8s ease-in-out infinite}
+.loveCard{margin:20px auto 0;padding:30px;max-width:650px;background:linear-gradient(145deg,rgba(255,79,154,.12),rgba(166,108,255,.09));border:1px solid rgba(255,255,255,.13);border-radius:26px}
+.to{color:#ffb3d3;font-size:14px}.recipient{font-size:35px;font-weight:800;margin:5px 0 15px}.message{white-space:pre-wrap;color:#f8edf5;line-height:2;font-size:18px}
+.from{margin-top:20px;color:#cfc3d2}.from b{color:#fff}
+.player{margin-top:20px;padding:15px;border-radius:18px;background:rgba(0,0,0,.2);border:1px solid var(--line)}
+.playerTitle{display:flex;justify-content:space-between;gap:10px;align-items:center}.now{color:#ffb5d4;font-weight:700}
+footer{padding:30px 0 50px;text-align:center;color:#887b8f;font-size:12px}
+#toast{position:fixed;left:50%;bottom:25px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#17111c;border:1px solid var(--line);padding:12px 18px;border-radius:999px;z-index:20;transition:.25s}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<div id="toast"></div>
+<main class="container">
+<section class="hero">
+  <div class="heroCard card">
+    <span class="badge">💌 هدية صغيرة… بس من القلب</span>
+    <span class="heart">💗</span>
+    <h1><span class="gradient">إلك هدية</span><br>مو مثل أي هدية</h1>
+    <p class="subtitle">سويت هذا المكان حتى تكون الرسالة إلها لحظة خاصة… اسم، كلام من القلب، وأغنية تختارها أنت.</p>
+    <div class="actions" style="justify-content:center">
+      <a class="btn" href="#make">ابدأ الهدية ✨</a>
+      <a class="btn btnGhost" href="#songs">الأغاني 🎵</a>
+    </div>
+  </div>
+</section>
+
+<section id="make" class="section">
+  <div class="card" style="padding:26px">
+    <h2 class="sectionTitle">اصنع الهدية 💝</h2>
+    <p class="sectionSub">اكتب التفاصيل، وبعدها اضغط «افتح الهدية».</p>
+    <div class="grid">
+      <div>
+        <div class="field"><label>اسم الشخص 💗</label><input id="to" placeholder="مثلاً: سالي"></div>
+        <div class="field"><label>منو المرسل؟</label><input id="from" value="علي"></div>
+      </div>
+      <div>
+        <div class="field"><label>رسالتك</label><textarea id="msg" placeholder="اكتب كلامك من قلبك هنا...">إلى الشخص اللي وجوده يخلّي كلشي أحلى...
+يمكن الكلمات ما تكفي، بس أتمنى هاي الهدية توصلك وتبتسمين من تشوفينها. 💗</textarea></div>
+      </div>
+    </div>
+    <div class="actions">
+      <button onclick="openGift()">افتح الهدية 💌</button>
+      <button class="btnGhost" onclick="randomMessage()">اقترحلي رسالة ✨</button>
+    </div>
+  </div>
+</section>
+
+<section id="songs" class="section">
+  <h2 class="sectionTitle">أغاني اخترتها للجو 🎵</h2>
+  <p class="sectionSub">ثلاث أغاني رومانسية مناسبة للهدية. الضغط على «اسمع» يفتح المصدر الرسمي/نتيجة البحث.</p>
+  <div class="grid">
+    <div class="song card" data-song="قمر وجهات عيونك — غيث صباح" onclick="selectSong(this)">
+      <div class="songIcon">🌙</div><h3>قمر وجهات عيونك</h3><p>غيث صباح</p>
+      <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=غيث+صباح+قمر+وجهات+عيونك" onclick="event.stopPropagation()">اسمع على YouTube ↗</a>
+    </div>
+    <div class="song card selected" data-song="الكرة الأرضية — حسين غزال" onclick="selectSong(this)">
+      <div class="songIcon">🌍</div><h3>الكرة الأرضية</h3><p>حسين غزال</p>
+      <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=_UOL3QO45mc" onclick="event.stopPropagation()">اسمع الكليب الرسمي ↗</a>
+    </div>
+    <div class="song card" data-song="حب أي وحدة — محمد عبد الجبار" onclick="selectSong(this)">
+      <div class="songIcon">❤️</div><h3>حب أي وحدة</h3><p>محمد عبد الجبار</p>
+      <a target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=محمد+عبد+الجبار+حب+اي+وحدة" onclick="event.stopPropagation()">اسمع على YouTube ↗</a>
+    </div>
+    <div class="song card" onclick="ambient(this)">
+      <div class="songIcon">✨</div><h3>مود هادئ</h3><p>موسيقى بسيطة مولدة داخل الموقع — بدون حقوق أغاني</p>
+      <a href="#!" onclick="event.preventDefault();event.stopPropagation();ambient(this)">شغّل المود الهادئ</a>
+    </div>
+  </div>
+
+  <div id="reveal" class="revealWrap card">
+    <div class="envelope">💌</div>
+    <div class="loveCard">
+      <div class="to">إلى</div>
+      <div class="recipient" id="rTo">...</div>
+      <div class="message" id="rMsg"></div>
+      <div class="from">من <b id="rFrom">...</b>، بكل حب 🤍</div>
+      <div class="player">
+        <div class="playerTitle"><span>الأغنية المختارة 🎵</span><span class="now" id="rSong">...</span></div><div style="color:#bfb2c5;font-size:12px;margin-top:7px">🎶 الموسيقى تبدأ عند فتح الهدية</div>
+      </div>
+    </div>
+    <div class="actions" style="justify-content:center;margin-top:18px">
+      <button onclick="copyGiftLink()">نسخ رابط الهدية 🔗</button>
+      <button class="btnGhost" onclick="shareGift()">مشاركة 📤</button>
+      <button class="btnGhost" onclick="window.scrollTo({top:0,behavior:'smooth'})">من البداية ↑</button>
+    </div>
+  </div>
+</section>
+<footer>صنع بحب 💗<br><strong style="color:#ffb5d4">صنع الموقع بواسطة علي أزهر محمد</strong><br>هدية خاصة من القلب ✨</footer>
+</main>
+
+<script>
+let selectedSong="الكرة الأرضية — حسين غزال";
+let musicStarted=false, musicTimer=null, musicOsc=[];
+function startGiftMusic(){
+  if(musicStarted) return;
+  musicStarted=true;
+  try{
+    const AC=window.AudioContext||window.webkitAudioContext;
+    const ctx=new AC();
+    const gain=ctx.createGain(); gain.gain.value=.035; gain.connect(ctx.destination);
+    const notes=[261.63,329.63,392.00,329.63,293.66,349.23,440.00,349.23];
+    let i=0;
+    function note(){
+      const o=ctx.createOscillator();
+      o.type="sine"; o.frequency.value=notes[i++%notes.length];
+      o.connect(gain); o.start(); o.stop(ctx.currentTime+.42);
+      if(musicStarted) musicTimer=setTimeout(note,520);
+    }
+    note();
+    window._giftAudioStop=()=>{musicStarted=false;clearTimeout(musicTimer);gain.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.5)};
+  }catch(e){}
+}
+
+let audioCtx=null, timer=null;
+
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2200)}
+function selectSong(el){
+  document.querySelectorAll('.song').forEach(x=>x.classList.remove('selected'));
+  el.classList.add('selected'); selectedSong=el.dataset.song; toast("تم اختيار: "+selectedSong);
+}
+function randomMessage(){
+ const arr=[
+ "وجودك بحياتي مو شي عابر… وجودك من الأشياء اللي أخليها بقلبي وأحافظ عليها. 💗",
+ "هاي مو مجرد هدية، هاي طريقة صغيرة أكلك بيها إنك شخص غالي عليّ أكثر مما تتخيلين. ✨",
+ "إذا يوم من الأيام نسيتِ شكد أنتِ مهمة، افتحي هاي الرسالة وتذكري أكو شخص يتمنى لكِ الفرح دائماً. 🤍"
+ ];
+ document.getElementById('msg').value=arr[Math.floor(Math.random()*arr.length)];
+}
+function data(){
+ return {to:document.getElementById('to').value.trim()||"إلك",from:document.getElementById('from').value.trim()||"شخص يحبك",msg:document.getElementById('msg').value.trim(),song:selectedSong};
+}
+function openGift(){
+ startGiftMusic();
+ const d=data();
+ document.getElementById('rTo').textContent=d.to;
+ document.getElementById('rFrom').textContent=d.from;
+ document.getElementById('rMsg').textContent=d.msg;
+ document.getElementById('rSong').textContent=d.song;
+ document.getElementById('reveal').style.display='block';
+ location.hash="gift="+btoa(unescape(encodeURIComponent(JSON.stringify(d))));
+ setTimeout(()=>document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'center'}),80);
+ toast("الهدية جاهزة 💌");
+}
+function loadGift(){
+ if(!location.hash.startsWith("#gift=")) return;
+ try{
+  const d=JSON.parse(decodeURIComponent(escape(atob(location.hash.slice(6)))));
+  document.getElementById('to').value=d.to||"";
+  document.getElementById('from').value=d.from||"";
+  document.getElementById('msg').value=d.msg||"";
+  selectedSong=d.song||selectedSong;
+  document.querySelectorAll('.song').forEach(x=>x.classList.toggle('selected',x.dataset.song===selectedSong));
+  document.getElementById('rTo').textContent=d.to||"إلك";
+  document.getElementById('rFrom').textContent=d.from||"شخص يحبك";
+  document.getElementById('rMsg').textContent=d.msg||"";
+  document.getElementById('rSong').textContent=selectedSong;
+  document.getElementById('reveal').style.display='block';
+  setTimeout(()=>document.getElementById('reveal').scrollIntoView({behavior:'smooth'}),200);
+ }catch(e){}
+}
+async function copyGiftLink(){
+ try{await navigator.clipboard.writeText(location.href);toast("اننسخ رابط الهدية 🔗");}
+ catch(e){prompt("انسخ الرابط من هنا:",location.href)}
+}
+async function shareGift(){
+ const text="💌 عندي إلك هدية خاصة، افتحي الرابط:";
+ if(navigator.share){await navigator.share({title:"هدية من القلب 💗",text,url:location.href}).catch(()=>{});}
+ else{window.open("https://wa.me/?text="+encodeURIComponent(text+" "+location.href),"_blank")}
+}
+function ambient(el){
+ document.querySelectorAll('.song').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');
+ if(timer){clearInterval(timer);timer=null}
+ audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();
+ const o=audioCtx.createOscillator(), g=audioCtx.createGain();
+ o.type='sine';o.frequency.value=196;g.gain.value=.025;o.connect(g);g.connect(audioCtx.destination);o.start();
+ let notes=[196,220,261.63,293.66,261.63,220],i=0;
+ timer=setInterval(()=>{o.frequency.setTargetAtTime(notes[i++%notes.length],audioCtx.currentTime,.12)},700);
+ selectedSong="مود هادئ — موسيقى داخل الموقع";document.getElementById('rSong').textContent=selectedSong;
+ toast("اشتغل المود الهادئ ✨");
+}
+loadGift();
+</script>
+</body>
+</html>
